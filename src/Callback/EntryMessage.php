@@ -69,9 +69,9 @@ class EntryMessage
 
     private function updateAuthentication()
     {
-        $this->isAuthentication = (!is_null(Helper::array_find($this->_message, 'authentication')));
+        $this->isAuthentication = (!is_null(Helper::array_find($this->_message, 'optin')));
         if ($this->isAuthentication)
-            $this->authentication = new Authentication(Helper::array_find($this->_message, 'authentication'));
+            $this->authentication = new Authentication(Helper::array_find($this->_message, 'optin'));
     }
 
     private function updatePostback()
